@@ -30,8 +30,7 @@ function renderText(ctx, text, x, y) {
 function getMaxElement(arr) {
   var maxElement = 0;
   arr.reduce(function (a, b) {
-    maxElement = Math.max(a, b);
-    return maxElement;
+    return maxElement = Math.max(a, b);
   });
   return maxElement;
 }
