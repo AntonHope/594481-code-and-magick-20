@@ -24,13 +24,15 @@ function renderArrWizards(quantity) {
       coatColor: COAT_COLORS[getRandomIndex(COAT_COLORS)],
       eyesColor: EYES_COLORS[getRandomIndex(EYES_COLORS)]
     };
+
     arrWizards.push(wizard);
   }
   return arrWizards;
 }
 
-function renderWizards(wizard) {
+function createWizardsElement(wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
+
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
@@ -38,17 +40,18 @@ function renderWizards(wizard) {
   return wizardElement;
 }
 
-var arrSimilarWizards = renderArrWizards(4);
+var SimilarWizards = renderArrWizards(4);
 
 function renderSimilarWizards(arr) {
   var fragment = document.createDocumentFragment();
 
   for (var i = 0; i < arr.length; i++) {
-    fragment.append(renderWizards(arr[i]));
+    fragment.append(createWizardsElement(arr[i]));
   }
+
   similarListElement.append(fragment);
 }
 
-renderSimilarWizards(arrSimilarWizards);
+renderSimilarWizards(SimilarWizards);
 
 
