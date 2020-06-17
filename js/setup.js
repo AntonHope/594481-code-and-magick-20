@@ -14,7 +14,7 @@ function getRandomIndex(arr) {
   return Math.floor(Math.random() * arr.length);
 }
 
-function  createWizards(quantity) {
+function createWizards(quantity) {
   var arrWizards = [];
 
   for (var i = 0; i < quantity; i++) {
