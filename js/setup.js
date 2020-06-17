@@ -14,7 +14,7 @@ function getRandomIndex(arr) {
   return Math.floor(Math.random() * arr.length);
 }
 
-function renderArrWizards(quantity) {
+function  createWizards(quantity) {
   var arrWizards = [];
 
   for (var i = 0; i < quantity; i++) {
@@ -27,6 +27,7 @@ function renderArrWizards(quantity) {
 
     arrWizards.push(wizard);
   }
+
   return arrWizards;
 }
 
@@ -40,7 +41,7 @@ function createWizardsElement(wizard) {
   return wizardElement;
 }
 
-var SimilarWizards = renderArrWizards(4);
+var similarWizards = createWizards(4);
 
 function renderSimilarWizards(arr) {
   var fragment = document.createDocumentFragment();
@@ -52,6 +53,6 @@ function renderSimilarWizards(arr) {
   similarListElement.append(fragment);
 }
 
-renderSimilarWizards(SimilarWizards);
+renderSimilarWizards(similarWizards);
 
 
